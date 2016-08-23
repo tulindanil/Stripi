@@ -1,0 +1,3 @@
+[submodule "thirdparty/python-daemon"]
+	path = thirdparty/python-daemon
+	url = https://github.com/serverdensity/python-daemon.git
