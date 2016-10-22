@@ -74,7 +74,7 @@ class Strip:
                             color, duration, blocking)
 
     def pulse(self, c_1, c_2, duration=2, **kwargs):
-        predicate = kwargs.get('predicate', lambda: True)
+        predicate = kwargs['predicate']
         while predicate():
             self.sinus(c_1, duration)
             self.sinus(c_2, duration)
