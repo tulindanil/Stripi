@@ -38,10 +38,7 @@ class Strip:
 
     def set_color(self, color):
         for pin, brightness in zip(self.pins, color):
-            try: self.pi.set_PWM_dutycycle(pin, int(brightness))
-            except Exception as e:
-                print(int(brightness))
-                raise e
+            self.pi.set_PWM_dutycycle(pin, int(brightness))
 
     def get_color(self):
         return [float(self.pi.get_PWM_dutycycle(pin)) \
