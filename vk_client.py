@@ -14,6 +14,6 @@ api = vk.API(session)
 def does_have_new_messages():
     dialogs = api.messages.getDialogs()
     for dialog in dialogs[1:]:
-        if not dialog['read_state']:
+        if not dialog['read_state'] and dialog['out'] == 0:
             return True
     return False
