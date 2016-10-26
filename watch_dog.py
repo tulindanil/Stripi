@@ -7,7 +7,7 @@ s = S()
 try:
     address = s.address()
 except:
-    address = input('Enter a ip-address: ')
+    address = input('Enter an ip-address: ')
     s.update_address(address)
 
 class Dog(Thread):
