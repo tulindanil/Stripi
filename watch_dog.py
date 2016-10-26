@@ -15,5 +15,5 @@ class Dog(Thread):
         self.is_available = False
         while 1:
             status = system('ping -c 1 ' + address + ' > /dev/null')
-            self.is_available = bool(status)
+            self.is_available = not bool(status)
             sleep(.5)
