@@ -73,6 +73,11 @@ class Strip:
         return self.animate(lambda x: sin(x * pi - (pi / 2)) / 2 + .5,
                             color, duration, blocking)
 
+    def wait(self, color, **kwargs):
+        predicate = kwargs['predicate']
+        self.sinus(color)
+        while predicate(): sleep(.5)
+
     def pulse(self, c_1, c_2, duration=2, **kwargs):
         predicate = kwargs['predicate']
         while predicate():
