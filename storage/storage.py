@@ -32,3 +32,11 @@ class Storage:
     @synchronize
     def update_token(self, shelf, key):
         shelf['token'] = key
+
+    @synchronize
+    def address(self, shelf):
+        return shelf['address']
+
+    @synchronize
+    def update_address(self, shelf, key):
+        shelf['address'] = key
