@@ -14,5 +14,6 @@ class Dog(Thread):
     def run(self):
         self.is_available = False
         while 1:
-            self.is_available = bool(system('ping -c 1 ' + address))
+            status = system('ping -c 1 ' + address + ' > /dev/null')
+            self.is_available = bool(status)
             sleep(.5)
