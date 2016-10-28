@@ -8,13 +8,17 @@ from vk_client import does_have_new_messages
 from watch_dog import Dog
 from threading import Thread
 
+from time import sleep
+
 class UnreadUpdater(Thread):
     def run(self):
         self.new_messages = False
         while 1:
             try:
                 self.new_messages = does_have_new_messages()
-            except: pass
+            except:
+                self.new_messages = False
+            sleep(.5)
 
 s = S()
 
